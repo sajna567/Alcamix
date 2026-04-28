@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Donate Food — FoodBridge</title>
+  <meta name="description" content="Post your surplus food in 10 seconds. Help feed those in need near you."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="styles.css"/>
+  <link rel="stylesheet" href="donate.css"/>
+</head>
+<body>
+  <nav class="navbar scrolled" id="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo"><span class="logo-icon">🌉</span><span>Food<strong>Bridge</strong></span></a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="feed.html">Live Feed</a></li>
+        <li><a href="donate.html" class="active">Donate Food</a></li>
+        <li><a href="find.html">Find Food</a></li>
+        <li><a href="volunteer.html">Volunteer</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </nav>
+
+  <main class="donate-main">
+    <div class="donate-hero">
+      <div class="dh-label"><span class="pulse-dot"></span> Post Surplus Food</div>
+      <h1>Share Your <span class="gradient-text">Surplus</span></h1>
+      <p>Fill in the details below. Your listing goes live instantly and nearby NGOs &amp; individuals are notified in seconds.</p>
+    </div>
+
+    <!-- Progress Bar -->
+    <div class="progress-bar-wrap">
+      <div class="progress-steps">
+        <div class="ps active" id="ps1"><div class="ps-dot">1</div><span>Food Details</span></div>
+        <div class="ps-line"></div>
+        <div class="ps" id="ps2"><div class="ps-dot">2</div><span>Location &amp; Time</span></div>
+        <div class="ps-line"></div>
+        <div class="ps" id="ps3"><div class="ps-dot">3</div><span>Confirm</span></div>
+      </div>
+    </div>
+
+    <div class="donate-container">
+      <!-- STEP 1 -->
+      <div class="form-step active" id="formStep1">
+        <h2 class="step-title">What food are you sharing?</h2>
+
+        <!-- Photo Upload -->
+        <div class="upload-zone" id="uploadZone">
+          <input type="file" id="photoInput" accept="image/*" hidden/>
+          <div class="upload-inner" id="uploadInner">
+            <div class="upload-icon">📷</div>
+            <p>Drop a photo here or <span class="upload-link">browse</span></p>
+            <small>JPG, PNG up to 10MB</small>
+          </div>
+          <img id="previewImg" class="preview-img hidden" alt="Food preview"/>
+        </div>
+
+        <div class="form-grid">
+          <div class="form-group full">
+            <label for="foodName">Food Name / Type *</label>
+            <input type="text" id="foodName" placeholder="e.g. Biryani, Veg Thali, Wedding Buffet…" class="form-input"/>
+          </div>
+          <div class="form-group">
+            <label for="foodQty">Estimated Portions *</label>
+            <input type="number" id="foodQty" placeholder="e.g. 50" min="1" class="form-input"/>
+          </div>
+          <div class="form-group">
+            <label for="foodType">Food Type *</label>
+            <select id="foodType" class="form-input form-select">
+              <option value="">Select type</option>
+              <option>Vegetarian</option>
+              <option>Non-Vegetarian</option>
+              <option>Vegan</option>
+              <option>Mixed</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="foodSource">Source *</label>
+            <select id="foodSource" class="form-input form-select">
+              <option value="">Select source</option>
+              <option>Wedding / Event</option>
+              <option>Restaurant</option>
+              <option>Hostel / Mess</option>
+              <option>Corporate Canteen</option>
+              <option>Home Kitchen</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="allergens">Allergens (optional)</label>
+            <input type="text" id="allergens" placeholder="e.g. Nuts, Dairy, Gluten" class="form-input"/>
+          </div>
+          <div class="form-group full">
+            <label for="foodDesc">Additional Notes</label>
+            <textarea id="foodDesc" placeholder="Anything else we should know? Packaging, special handling…" rows="3" class="form-input"></textarea>
+          </div>
+        </div>
+        <button class="btn btn-primary btn-next" id="step1Next">Continue →</button>
+      </div>
+
+      <!-- STEP 2 -->
+      <div class="form-step" id="formStep2">
+        <h2 class="step-title">Where &amp; when can it be picked up?</h2>
+        <div class="form-grid">
+          <div class="form-group full">
+            <label for="address">Pickup Address *</label>
+            <div class="input-icon-wrap">
+              <span class="input-icon">📍</span>
+              <input type="text" id="address" placeholder="Enter full address or use current location" class="form-input icon-input"/>
+            </div>
+            <button class="location-btn" id="geoBtn">📡 Use My Current Location</button>
+          </div>
+          <div class="form-group">
+            <label for="city">City *</label>
+            <input type="text" id="city" placeholder="e.g. Mumbai" class="form-input"/>
+          </div>
+          <div class="form-group">
+            <label for="pincode">Pincode</label>
+            <input type="text" id="pincode" placeholder="400001" class="form-input"/>
+          </div>
+          <div class="form-group">
+            <label for="pickupFrom">Pickup From *</label>
+            <input type="time" id="pickupFrom" class="form-input"/>
+          </div>
+          <div class="form-group">
+            <label for="pickupTo">Pickup Until *</label>
+            <input type="time" id="pickupTo" class="form-input"/>
+          </div>
+          <div class="form-group full">
+            <label>Delivery Options</label>
+            <div class="toggle-group">
+              <label class="toggle-opt">
+                <input type="checkbox" id="selfPickup" checked/>
+                <span class="toggle-chip">🏃 Self Pickup OK</span>
+              </label>
+              <label class="toggle-opt">
+                <input type="checkbox" id="needVolunteer"/>
+                <span class="toggle-chip">🛵 Need Volunteer</span>
+              </label>
+              <label class="toggle-opt">
+                <input type="checkbox" id="canDeliver"/>
+                <span class="toggle-chip">🚗 We Can Deliver</span>
+              </label>
+            </div>
+          </div>
+          <div class="form-group full">
+            <label for="contactName">Contact Name *</label>
+            <input type="text" id="contactName" placeholder="Your name" class="form-input"/>
+          </div>
+          <div class="form-group">
+            <label for="contactPhone">Phone *</label>
+            <input type="tel" id="contactPhone" placeholder="+91 98765 43210" class="form-input"/>
+          </div>
+          <div class="form-group">
+            <label for="contactEmail">Email</label>
+            <input type="email" id="contactEmail" placeholder="you@example.com" class="form-input"/>
+          </div>
+        </div>
+        <div class="step-actions">
+          <button class="btn btn-secondary" id="step2Back">← Back</button>
+          <button class="btn btn-primary btn-next" id="step2Next">Review Listing →</button>
+        </div>
+      </div>
+
+      <!-- STEP 3 -->
+      <div class="form-step" id="formStep3">
+        <h2 class="step-title">Review &amp; Confirm</h2>
+        <div class="review-card" id="reviewCard">
+          <!-- JS populated -->
+        </div>
+        <div class="terms-check">
+          <label class="toggle-opt">
+            <input type="checkbox" id="termsCheck" checked/>
+            <span>I confirm this food is safe to consume and the details are accurate.</span>
+          </label>
+        </div>
+        <div class="step-actions">
+          <button class="btn btn-secondary" id="step3Back">← Back</button>
+          <button class="btn btn-primary btn-next" id="submitBtn">🚀 Post Food Now</button>
+        </div>
+      </div>
+
+      <!-- SUCCESS -->
+      <div class="form-step" id="formSuccess">
+        <div class="success-wrap">
+          <div class="success-icon">🎉</div>
+          <h2>Your food is live!</h2>
+          <p>We've notified <strong id="notifiedCount">34</strong> nearby NGOs and individuals. Expect a claim within minutes.</p>
+          <div class="success-id">Listing ID: <strong id="listingId">FB-2847</strong></div>
+          <div class="success-actions">
+            <a href="find.html" class="btn btn-primary">📍 View in Find Food</a>
+            <a href="feed.html" class="btn btn-secondary">📋 Live Feed</a>
+            <a href="donate.html" class="btn btn-cta-ghost">Post Another</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="app.js"></script>
+  <script src="donate.js"></script>
+</body>
+</html>

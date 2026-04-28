@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Find Food — FoodBridge</title>
+  <meta name="description" content="Find surplus food available near you. NGOs, shelters, and individuals can claim instantly."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="styles.css"/>
+  <link rel="stylesheet" href="find.css"/>
+</head>
+<body>
+  <nav class="navbar scrolled" id="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo"><span class="logo-icon">🌉</span><span>Food<strong>Bridge</strong></span></a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="feed.html">Live Feed</a></li>
+        <li><a href="donate.html">Donate Food</a></li>
+        <li><a href="find.html" class="active">Find Food</a></li>
+        <li><a href="volunteer.html">Volunteer</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a href="donate.html" class="btn btn-primary">Post Surplus</a>
+        <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </nav>
+
+  <main class="find-main">
+    <div class="find-hero">
+      <h1>Find Food <span class="gradient-text">Near You</span></h1>
+      <p>Enter your location and we'll show all available food listings within 10 km. Claim in one tap.</p>
+    </div>
+
+    <div class="find-layout">
+      <!-- Sidebar -->
+      <aside class="find-sidebar">
+        <div class="sidebar-section">
+          <label class="sidebar-label">Your Location</label>
+          <div class="input-icon-wrap" style="margin-bottom:10px">
+            <span class="input-icon">📍</span>
+            <input type="text" id="findLocation" placeholder="Enter city or area…" class="form-input icon-input"/>
+          </div>
+          <button class="location-btn" id="findGeoBtn">📡 Use My Location</button>
+        </div>
+        <div class="sidebar-section">
+          <label class="sidebar-label">Radius</label>
+          <input type="range" id="radiusSlider" min="1" max="20" value="10" class="slider"/>
+          <div class="slider-label"><span>1 km</span><span id="radiusVal">10 km</span><span>20 km</span></div>
+        </div>
+        <div class="sidebar-section">
+          <label class="sidebar-label">Food Type</label>
+          <div class="check-group">
+            <label class="chk-item"><input type="checkbox" checked id="chkVeg"/> Vegetarian</label>
+            <label class="chk-item"><input type="checkbox" checked id="chkNonveg"/> Non-Vegetarian</label>
+            <label class="chk-item"><input type="checkbox" checked id="chkMixed"/> Mixed</label>
+          </div>
+        </div>
+        <div class="sidebar-section">
+          <label class="sidebar-label">I Am</label>
+          <select class="form-input form-select" id="findUserType">
+            <option>NGO / Shelter</option>
+            <option>Individual</option>
+            <option>Volunteer Pickup</option>
+          </select>
+        </div>
+        <button class="btn btn-primary" id="findBtn" style="width:100%;justify-content:center">🔍 Find Food Now</button>
+
+        <!-- Register Panel -->
+        <div class="register-panel">
+          <div class="rp-icon">🔔</div>
+          <h3>Get Instant Alerts</h3>
+          <p>Register once and receive push notifications when food becomes available near you.</p>
+          <button class="btn btn-secondary" id="registerAlertBtn" style="width:100%;justify-content:center">Enable Alerts</button>
+        </div>
+      </aside>
+
+      <!-- Map + Results -->
+      <div class="find-content">
+        <div class="map-area" id="mapArea">
+          <div class="map-placeholder">
+            <div class="map-grid"></div>
+            <div class="map-center-pin">📍</div>
+            <div class="map-pin" style="top:25%;left:40%">🍛</div>
+            <div class="map-pin" style="top:50%;left:65%">🍽️</div>
+            <div class="map-pin" style="top:70%;left:30%">🥘</div>
+            <div class="map-pin" style="top:35%;left:70%">🍗</div>
+            <div class="map-pin" style="top:60%;left:55%">🥪</div>
+            <div class="map-label">Interactive map — 5 listings within 10 km</div>
+          </div>
+        </div>
+        <div class="results-header">
+          <span id="resultCount" class="result-count">Showing 5 listings</span>
+          <div class="sort-wrap">
+            <label>Sort:</label>
+            <select class="form-input form-select sort-select" id="sortBy">
+              <option value="distance">Nearest First</option>
+              <option value="qty">Most Portions</option>
+              <option value="time">Expiring Soon</option>
+            </select>
+          </div>
+        </div>
+        <div class="result-list" id="resultList">
+          <!-- JS populated -->
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Alert Modal -->
+  <div class="modal-overlay hidden" id="alertModal">
+    <div class="modal-box">
+      <button class="modal-close" id="alertModalClose">✕</button>
+      <div class="modal-icon">🔔</div>
+      <h3>Enable Food Alerts</h3>
+      <p>Get notified the moment food becomes available near you.</p>
+      <div class="modal-form">
+        <input type="text" placeholder="Name / Organisation" class="form-input" id="alertName"/>
+        <input type="tel" placeholder="Phone Number" class="form-input" id="alertPhone"/>
+        <input type="email" placeholder="Email (optional)" class="form-input" id="alertEmail"/>
+        <select class="form-input form-select" id="alertType">
+          <option>NGO / Shelter</option>
+          <option>Individual</option>
+          <option>Volunteer</option>
+        </select>
+      </div>
+      <button class="btn btn-primary" id="confirmAlert" style="width:100%;justify-content:center">✅ Register for Alerts</button>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+  <script src="find.js"></script>
+</body>
+</html>

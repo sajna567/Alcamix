@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Live Feed — FoodBridge</title>
+  <meta name="description" content="Real-time feed of available surplus food near you. Claim in one tap."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="styles.css"/>
+  <link rel="stylesheet" href="feed.css"/>
+</head>
+<body>
+  <nav class="navbar scrolled" id="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo"><span class="logo-icon">🌉</span><span>Food<strong>Bridge</strong></span></a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="feed.html" class="active">Live Feed</a></li>
+        <li><a href="donate.html">Donate Food</a></li>
+        <li><a href="find.html">Find Food</a></li>
+        <li><a href="volunteer.html">Volunteer</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a href="donate.html" class="btn btn-primary">Post Surplus</a>
+        <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </nav>
+
+  <main class="feed-main">
+    <div class="feed-header">
+      <div>
+        <div class="feed-live-badge"><span class="pulse-dot"></span> Live Updates</div>
+        <h1>Food <span class="gradient-text">Live Feed</span></h1>
+        <p>Real-time surplus food listings. Updated every 30 seconds.</p>
+      </div>
+      <div class="feed-controls">
+        <div class="filter-bar" id="filterBar">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="available">Available</button>
+          <button class="filter-btn" data-filter="claimed">Claimed</button>
+          <button class="filter-btn" data-filter="veg">🥦 Veg</button>
+          <button class="filter-btn" data-filter="nonveg">🍗 Non-Veg</button>
+          <button class="filter-btn" data-filter="new">🆕 New Posts</button>
+        </div>
+        <div class="search-box">
+          <span class="sb-icon">🔍</span>
+          <input type="text" id="searchInput" placeholder="Search city, food…" class="form-input"/>
+        </div>
+      </div>
+    </div>
+
+    <div class="feed-stats-bar">
+      <div class="fsb-item"><span class="fsb-num" id="totalCount">0</span><span>Total Listings</span></div>
+      <div class="fsb-item"><span class="fsb-num green" id="availCount">0</span><span>Available</span></div>
+      <div class="fsb-item"><span class="fsb-num purple" id="claimedCount">0</span><span>Claimed Today</span></div>
+      <div class="fsb-item"><span class="fsb-num amber" id="portionsCount">0</span><span>Portions Live</span></div>
+    </div>
+
+    <div class="feed-grid" id="feedGrid">
+      <!-- JS populated -->
+    </div>
+  </main>
+
+  <!-- Claim Modal -->
+  <div class="modal-overlay hidden" id="claimModal">
+    <div class="modal-box">
+      <button class="modal-close" id="modalClose">✕</button>
+      <div class="modal-icon">🎯</div>
+      <h3 id="modalTitle">Claim Listing</h3>
+      <p id="modalDesc">Confirm you'll be picking up this food.</p>
+      <div class="modal-form">
+        <input type="text" placeholder="Your Name" class="form-input" id="claimName"/>
+        <input type="tel" placeholder="Phone Number" class="form-input" id="claimPhone"/>
+        <select class="form-input form-select" id="claimType">
+          <option>NGO / Shelter</option>
+          <option>Individual</option>
+          <option>Volunteer</option>
+        </select>
+      </div>
+      <button class="btn btn-primary" id="confirmClaim" style="width:100%;justify-content:center">Confirm Claim ✓</button>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+  <script src="feed.js"></script>
+</body>
+</html>

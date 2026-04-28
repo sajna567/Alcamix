@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Volunteer — FoodBridge</title>
+  <meta name="description" content="Join FoodBridge volunteer network. Pick up surplus food and deliver it to those who need it most."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="styles.css"/>
+  <link rel="stylesheet" href="volunteer.css"/>
+</head>
+<body>
+  <nav class="navbar scrolled" id="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo"><span class="logo-icon">🌉</span><span>Food<strong>Bridge</strong></span></a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="feed.html">Live Feed</a></li>
+        <li><a href="donate.html">Donate Food</a></li>
+        <li><a href="find.html">Find Food</a></li>
+        <li><a href="volunteer.html" class="active">Volunteer</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a href="donate.html" class="btn btn-primary">Post Surplus</a>
+        <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <!-- Hero -->
+    <section class="vol-hero">
+      <div class="vol-hero-bg">
+        <img src="volunteer_network.png" alt="Volunteers delivering food"/>
+        <div class="vol-hero-overlay"></div>
+      </div>
+      <div class="vol-hero-content">
+        <div class="vol-hero-badge">🛵 Join the Network</div>
+        <h1>Be the Bridge.<br/><span class="gradient-text">Feed Your City.</span></h1>
+        <p>When donors can't deliver, you can. Join 12,000+ volunteers across 320 cities who turn 30 minutes into a meal for someone in need.</p>
+        <div class="vol-hero-stats">
+          <div class="vhs"><span>12K+</span><small>Volunteers</small></div>
+          <div class="vhs"><span>45 min</span><small>Avg. Mission</small></div>
+          <div class="vhs"><span>98%</span><small>Success Rate</small></div>
+          <div class="vhs"><span>₹0</span><small>Cost to You</small></div>
+        </div>
+        <a href="#join-form" class="btn btn-hero-primary">Join as Volunteer</a>
+      </div>
+    </section>
+
+    <!-- How volunteering works -->
+    <section class="section" style="background:var(--bg2)">
+      <div class="container" style="text-align:center">
+        <div class="section-label">How It Works</div>
+        <h2 class="section-title">Your 30-minute <span class="gradient-text">rescue mission</span></h2>
+        <div class="vol-how-grid">
+          <div class="vol-how-card">
+            <div class="vhc-icon">📲</div>
+            <h3>Get Notified</h3>
+            <p>You get a pickup alert for surplus food near you with all details — address, quantity, contact.</p>
+          </div>
+          <div class="vol-how-card">
+            <div class="vhc-icon">🗺️</div>
+            <h3>Accept Mission</h3>
+            <p>Tap to accept. Navigate to the donor with one tap. They'll be ready with packed food.</p>
+          </div>
+          <div class="vol-how-card">
+            <div class="vhc-icon">🛵</div>
+            <h3>Pick Up &amp; Deliver</h3>
+            <p>Collect from the donor and drop to the nearest NGO or shelter — guided by in-app navigation.</p>
+          </div>
+          <div class="vol-how-card">
+            <div class="vhc-icon">⭐</div>
+            <h3>Earn Points</h3>
+            <p>Every delivery earns you impact points, badges, and monthly recognition from the community.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Volunteer perks -->
+    <section class="section perks-section">
+      <div class="container">
+        <div class="section-label">Why Volunteer</div>
+        <h2 class="section-title">More than just <span class="gradient-text">delivering food</span></h2>
+        <div class="perks-grid">
+          <div class="perk-card"><span class="perk-icon">🏅</span><h4>Verified Badge</h4><p>Get a verified volunteer badge on your profile, recognised by partner NGOs.</p></div>
+          <div class="perk-card"><span class="perk-icon">📊</span><h4>Impact Dashboard</h4><p>Track meals rescued, CO₂ saved, and distance covered — all in real time.</p></div>
+          <div class="perk-card"><span class="perk-icon">🎁</span><h4>Partner Rewards</h4><p>Top volunteers get vouchers from partner restaurants, cafes &amp; businesses.</p></div>
+          <div class="perk-card"><span class="perk-icon">🤝</span><h4>Community</h4><p>Join group chats, local events, and annual FoodBridge volunteer summits.</p></div>
+          <div class="perk-card"><span class="perk-icon">📜</span><h4>Certificates</h4><p>Monthly and annual volunteer certificates — great for CVs and portfolios.</p></div>
+          <div class="perk-card"><span class="perk-icon">🌍</span><h4>Real Impact</h4><p>Every delivery prevents food waste and feeds a real person. Measurable, tangible change.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Join Form -->
+    <section class="section join-section" id="join-form">
+      <div class="container">
+        <div class="join-layout">
+          <div class="join-info">
+            <div class="section-label">Sign Up</div>
+            <h2 class="section-title">Ready to <span class="gradient-text">get started?</span></h2>
+            <p style="color:var(--muted);line-height:1.8;margin-bottom:32px">Fill in the form and we'll onboard you within 24 hours. No training required — just a phone, a vehicle (optional), and the will to help.</p>
+            <div class="join-checklist">
+              <div class="jc-item"><span class="check">✓</span> Any vehicle or on foot</div>
+              <div class="jc-item"><span class="check">✓</span> Flexible hours — your schedule</div>
+              <div class="jc-item"><span class="check">✓</span> Zero cost to you</div>
+              <div class="jc-item"><span class="check">✓</span> Instant app onboarding</div>
+            </div>
+          </div>
+          <div class="join-form-card" id="joinFormCard">
+            <h3>Volunteer Registration</h3>
+            <div class="form-grid">
+              <div class="form-group">
+                <label for="vName">Full Name *</label>
+                <input type="text" id="vName" placeholder="Your name" class="form-input"/>
+              </div>
+              <div class="form-group">
+                <label for="vPhone">Phone *</label>
+                <input type="tel" id="vPhone" placeholder="+91 98765 43210" class="form-input"/>
+              </div>
+              <div class="form-group">
+                <label for="vEmail">Email *</label>
+                <input type="email" id="vEmail" placeholder="you@example.com" class="form-input"/>
+              </div>
+              <div class="form-group">
+                <label for="vCity">City *</label>
+                <input type="text" id="vCity" placeholder="Mumbai" class="form-input"/>
+              </div>
+              <div class="form-group full">
+                <label for="vVehicle">Vehicle Type</label>
+                <select id="vVehicle" class="form-input form-select">
+                  <option>Motorcycle / Scooter</option>
+                  <option>Bicycle</option>
+                  <option>Car</option>
+                  <option>On Foot (within 2 km)</option>
+                  <option>Auto / Rickshaw</option>
+                </select>
+              </div>
+              <div class="form-group full">
+                <label>Availability</label>
+                <div class="toggle-group">
+                  <label class="toggle-opt"><input type="checkbox" id="avMorn"/><span class="toggle-chip">Morning</span></label>
+                  <label class="toggle-opt"><input type="checkbox" id="avAfter" checked/><span class="toggle-chip">Afternoon</span></label>
+                  <label class="toggle-opt"><input type="checkbox" id="avEve" checked/><span class="toggle-chip">Evening</span></label>
+                  <label class="toggle-opt"><input type="checkbox" id="avWknd" checked/><span class="toggle-chip">Weekends</span></label>
+                </div>
+              </div>
+              <div class="form-group full">
+                <label for="vMotivation">Why do you want to volunteer? (optional)</label>
+                <textarea id="vMotivation" rows="3" placeholder="Tell us a bit about yourself…" class="form-input"></textarea>
+              </div>
+            </div>
+            <button class="btn btn-primary" id="volSubmitBtn" style="width:100%;justify-content:center">🚀 Join the Network</button>
+        
+          </div>
+          <div style="text-align:center; margin-top:16px;">
+ 
+          <div class="vol-success hidden" id="volSuccess">
+            <div class="success-icon">🎉</div>
+            <h2>Welcome aboard!</h2>
+            <p>You're officially part of the FoodBridge volunteer network. Check your phone — we'll send onboarding details within 24 hours.</p>
+            <div class="success-id">Volunteer ID: <strong id="volId">VB-4821</strong></div>
+            <a href="feed.html" class="btn btn-primary">View Live Feed</a>
+            <a href="volunteer-login.html" class="btn btn-secondary" style="margin-left:10px;">
+  🔐 Volunteer Login
+</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+  <script src="volunteer.js"></script>
+</body>
+</html>

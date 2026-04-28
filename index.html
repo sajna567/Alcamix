@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FoodBridge — Leftover Food, Zero Waste</title>
+  <meta name="description" content="FoodBridge connects surplus food from weddings, restaurants, and events to nearby NGOs, shelters, and individuals in real time. Zero waste, instant action." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ===== NAV ===== -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <span class="logo-icon">🌉</span>
+        <span>Food<strong>Bridge</strong></span>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="feed.html">Live Feed</a></li>
+        <li><a href="donate.html">Donate Food</a></li>
+        <li><a href="find.html">Find Food</a></li>
+        <li><a href="volunteer.html">Volunteer</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a href="donate.html" class="btn btn-primary" id="navDonateBtn">Post Surplus</a>
+        <button class="hamburger" id="hamburger" aria-label="Open menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero" id="hero">
+    <div class="hero-bg">
+      <img src="hero_food.png" alt="Hands sharing food" class="hero-img" />
+      <div class="hero-overlay"></div>
+    </div>
+    <div class="hero-content">
+      <div class="hero-badge animate-in" style="--delay:0.1s">
+        <span class="pulse-dot"></span> 2,847 meals rescued today
+      </div>
+      <h1 class="hero-title animate-in" style="--delay:0.2s">
+        Leftover Food.<br /><span class="gradient-text">Zero Waste.</span>
+      </h1>
+      <p class="hero-sub animate-in" style="--delay:0.35s">
+        Post surplus food in 10 seconds. Connect weddings, restaurants &amp; events to nearby NGOs, shelters &amp; individuals — in real time.
+      </p>
+      <div class="hero-actions animate-in" style="--delay:0.5s">
+        <a href="donate.html" class="btn btn-hero-primary" id="heroDonatBtn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+          Post Food Now
+        </a>
+        <a href="find.html" class="btn btn-hero-secondary" id="heroFindBtn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+          Find Nearby Food
+        </a>
+      </div>
+      <div class="hero-stats animate-in" style="--delay:0.65s">
+        <div class="stat-pill"><span class="stat-num" data-target="48200">0</span><span class="stat-label">Meals Saved</span></div>
+        <div class="stat-divider"></div>
+        <div class="stat-pill"><span class="stat-num" data-target="1340">0</span><span class="stat-label">NGOs Active</span></div>
+        <div class="stat-divider"></div>
+        <div class="stat-pill"><span class="stat-num" data-target="320">0</span><span class="stat-label">Cities Live</span></div>
+      </div>
+    </div>
+    <div class="scroll-hint">
+      <span>Scroll to explore</span>
+      <div class="scroll-arrow"></div>
+    </div>
+  </section>
+
+  <!-- ===== HOW IT WORKS ===== -->
+  <section class="section hiw" id="how-it-works">
+    <div class="container">
+      <div class="section-label">How It Works</div>
+      <h2 class="section-title">Food rescue in <span class="gradient-text">3 simple steps</span></h2>
+      <p class="section-sub">No complex logistics. No overhead. Just a real-time matchmaking layer that finally connects those with surplus to those in need.</p>
+      <div class="hiw-steps">
+        <div class="hiw-step" id="step1">
+          <div class="step-icon-wrap">
+            <div class="step-icon">📸</div>
+            <div class="step-num">01</div>
+          </div>
+          <h3>Post in 10 Seconds</h3>
+          <p>Snap a photo, drop your location, enter quantity &amp; pickup window. Done — your listing goes live instantly.</p>
+          <div class="step-tag">Donors → Restaurants, Weddings, Hostels, Events</div>
+        </div>
+        <div class="hiw-connector">
+          <div class="connector-line"></div>
+          <div class="connector-arrow">→</div>
+        </div>
+        <div class="hiw-step" id="step2">
+          <div class="step-icon-wrap">
+            <div class="step-icon">🔔</div>
+            <div class="step-num">02</div>
+          </div>
+          <h3>Instant Alerts Sent</h3>
+          <p>Nearby NGOs, shelters, and verified individuals get push notifications and can claim the food in one tap.</p>
+          <div class="step-tag">Recipients → NGOs, Shelters, Individuals</div>
+        </div>
+        <div class="hiw-connector">
+          <div class="connector-line"></div>
+          <div class="connector-arrow">→</div>
+        </div>
+        <div class="hiw-step" id="step3">
+          <div class="step-icon-wrap">
+            <div class="step-icon">🛵</div>
+            <div class="step-num">03</div>
+          </div>
+          <h3>Pickup or Delivery</h3>
+          <p>Recipients collect directly, or our volunteer network handles pickup if the donor can't deliver. Zero cost logistics.</p>
+          <div class="step-tag">Volunteers → Bikers, Walkers, Drivers</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== LIVE PREVIEW STRIP ===== -->
+  <section class="live-strip" id="live-strip">
+    <div class="strip-header">
+      <span class="pulse-dot"></span>
+      <span>Live Listings Near You</span>
+      <a href="feed.html" class="strip-link">View all →</a>
+    </div>
+    <div class="strip-ticker" id="stripTicker">
+      <!-- JS populated -->
+    </div>
+  </section>
+
+  <!-- ===== DUAL PANEL ===== -->
+  <section class="section dual-panel" id="dual-panel">
+    <div class="container dual-container">
+      <div class="panel panel-donor" id="panelDonor">
+        <div class="panel-img-wrap">
+          <img src="food_spread.png" alt="Surplus food ready for donation" />
+        </div>
+        <div class="panel-content">
+          <div class="panel-tag donor-tag">For Donors</div>
+          <h2>Turn Surplus Into<br /><span class="gradient-text">Someone's Meal</span></h2>
+          <p>Have extra food from a wedding, event, restaurant, or hostel? Don't let it go to waste — post it in seconds and make a real difference.</p>
+          <ul class="panel-list">
+            <li><span class="check">✓</span> 10-second listing with photo &amp; map pin</li>
+            <li><span class="check">✓</span> Set your own pickup window</li>
+            <li><span class="check">✓</span> Get notified when food is claimed</li>
+            <li><span class="check">✓</span> Track your impact dashboard</li>
+          </ul>
+          <a href="donate.html" class="btn btn-primary" id="donorPanelBtn">Post Food Now</a>
+        </div>
+      </div>
+      <div class="panel panel-receiver" id="panelReceiver">
+        <div class="panel-img-wrap">
+          <img src="ngo_shelter.png" alt="Community shelter receiving food" />
+        </div>
+        <div class="panel-content">
+          <div class="panel-tag receiver-tag">For NGOs &amp; Individuals</div>
+          <h2>Find Free Food<br /><span class="gradient-text">Right Now</span></h2>
+          <p>Register your shelter, NGO, or profile once and get real-time alerts when food becomes available in your area. Claim with one tap.</p>
+          <ul class="panel-list">
+            <li><span class="check">✓</span> Real-time push notifications</li>
+            <li><span class="check">✓</span> Map-based food discovery</li>
+            <li><span class="check">✓</span> One-tap claim &amp; confirm</li>
+            <li><span class="check">✓</span> Volunteer pickup available</li>
+          </ul>
+          <a href="find.html" class="btn btn-secondary" id="receiverPanelBtn">Find Food Nearby</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== VOLUNTEER BAND ===== -->
+  <section class="volunteer-band" id="volunteerBand">
+    <div class="vol-bg">
+      <img src="volunteer_network.png" alt="Volunteers on bikes delivering food" />
+      <div class="vol-overlay"></div>
+    </div>
+    <div class="vol-content">
+      <div class="vol-badge">Volunteer Network</div>
+      <h2>Be the Bridge.<br />Join Our Rider Network.</h2>
+      <p>When donors can't deliver, you can. Join thousands of volunteers across 320 cities who pick up surplus food and bring it to those in need. Your 30 minutes can feed a family.</p>
+      <div class="vol-stats">
+        <div class="vol-stat"><span>12,000+</span><small>Active Volunteers</small></div>
+        <div class="vol-stat"><span>45 min</span><small>Avg. Rescue Time</small></div>
+        <div class="vol-stat"><span>98%</span><small>Successful Pickups</small></div>
+      </div>
+      <a href="volunteer.html" class="btn btn-vol" id="volBandBtn">Join as Volunteer</a>
+    </div>
+  </section>
+
+  <!-- ===== IMPACT COUNTER ===== -->
+  <section class="section impact" id="impact">
+    <div class="container">
+      <div class="section-label">Our Impact</div>
+      <h2 class="section-title">Every meal matters. <span class="gradient-text">Here's the proof.</span></h2>
+      <div class="impact-grid">
+        <div class="impact-card" id="ic1">
+          <div class="impact-icon">🍽️</div>
+          <div class="impact-num counter" data-target="48200">0</div>
+          <div class="impact-label">Meals Rescued</div>
+          <div class="impact-bar"><div class="impact-bar-fill" style="--pct:82%"></div></div>
+        </div>
+        <div class="impact-card" id="ic2">
+          <div class="impact-icon">🏢</div>
+          <div class="impact-num counter" data-target="1340">0</div>
+          <div class="impact-label">NGOs &amp; Shelters</div>
+          <div class="impact-bar"><div class="impact-bar-fill" style="--pct:67%"></div></div>
+        </div>
+        <div class="impact-card" id="ic3">
+          <div class="impact-icon">🌍</div>
+          <div class="impact-num counter" data-target="320">0</div>
+          <div class="impact-label">Cities Active</div>
+          <div class="impact-bar"><div class="impact-bar-fill" style="--pct:55%"></div></div>
+        </div>
+        <div class="impact-card" id="ic4">
+          <div class="impact-icon">⏱️</div>
+          <div class="impact-num counter" data-target="12">0</div>
+          <div class="impact-label">Avg. Minutes to Claim</div>
+          <div class="impact-bar"><div class="impact-bar-fill" style="--pct:90%"></div></div>
+        </div>
+        <div class="impact-card" id="ic5">
+          <div class="impact-icon">💚</div>
+          <div class="impact-num counter" data-target="12000">0</div>
+          <div class="impact-label">Active Volunteers</div>
+          <div class="impact-bar"><div class="impact-bar-fill" style="--pct:75%"></div></div>
+        </div>
+        <div class="impact-card" id="ic6">
+          <div class="impact-icon">♻️</div>
+          <div class="impact-num counter" data-target="24">0</div>
+          <div class="impact-label">Tons CO₂ Saved</div>
+          <div class="impact-bar"><div class="impact-bar-fill" style="--pct:60%"></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TESTIMONIALS ===== -->
+  <section class="section testimonials" id="testimonials">
+    <div class="container">
+      <div class="section-label">Stories</div>
+      <h2 class="section-title">Real people, <span class="gradient-text">real impact</span></h2>
+      <div class="testi-grid">
+        <div class="testi-card" id="t1">
+          <div class="testi-quote">"</div>
+          <p>After every wedding we catered, we'd throw away 50+ kg of biryani. FoodBridge changed that entirely. Now it goes to a shelter 2 km away within the hour.</p>
+          <div class="testi-author">
+            <div class="testi-avatar" style="background: linear-gradient(135deg, #f97316, #ea580c)">RA</div>
+            <div>
+              <strong>Ravi Anand</strong>
+              <small>Wedding Caterer, Hyderabad</small>
+            </div>
+          </div>
+        </div>
+        <div class="testi-card" id="t2">
+          <div class="testi-quote">"</div>
+          <p>We run a small shelter for 80 kids. Before FoodBridge we'd struggle for dinner supplies three nights a week. Now we get notifications before we even ask.</p>
+          <div class="testi-author">
+            <div class="testi-avatar" style="background: linear-gradient(135deg, #8b5cf6, #6d28d9)">SP</div>
+            <div>
+              <strong>Sunita Pillai</strong>
+              <small>Shelter Director, Pune</small>
+            </div>
+          </div>
+        </div>
+        <div class="testi-card" id="t3">
+          <div class="testi-quote">"</div>
+          <p>I volunteer on weekends. Takes me 30 minutes to pick up from a restaurant and deliver to the nearest NGO. Best 30 minutes of my week, every single time.</p>
+          <div class="testi-author">
+            <div class="testi-avatar" style="background: linear-gradient(135deg, #10b981, #059669)">KM</div>
+            <div>
+              <strong>Karan Mehta</strong>
+              <small>Weekend Volunteer, Mumbai</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CTA BANNER ===== -->
+  <section class="cta-banner" id="ctaBanner">
+    <div class="cta-glow"></div>
+    <div class="container cta-inner">
+      <h2>Ready to rescue food<br />in your city?</h2>
+      <p>Join 50,000+ people making sure no cooked meal goes to waste. It takes 10 seconds to post, 1 tap to claim.</p>
+      <div class="cta-actions">
+        <a href="donate.html" class="btn btn-cta-primary" id="ctaDonatBtn">Post Surplus Food</a>
+        <a href="find.html" class="btn btn-cta-secondary" id="ctaFindBtn">Claim Free Food</a>
+        <a href="volunteer.html" class="btn btn-cta-ghost" id="ctaVolBtn">Become a Volunteer</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer" id="footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="nav-logo">
+          <span class="logo-icon">🌉</span>
+          <span>Food<strong>Bridge</strong></span>
+        </a>
+        <p>Connecting surplus food to those who need it most. Zero waste. Real time. Every city, every day.</p>
+        <div class="footer-social">
+          <a href="#" aria-label="Twitter" class="social-icon">𝕏</a>
+          <a href="#" aria-label="Instagram" class="social-icon">📷</a>
+          <a href="#" aria-label="LinkedIn" class="social-icon">💼</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Platform</h4>
+        <ul>
+          <li><a href="donate.html">Donate Food</a></li>
+          <li><a href="find.html">Find Food</a></li>
+          <li><a href="feed.html">Live Feed</a></li>
+          <li><a href="volunteer.html">Volunteer</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Community</h4>
+        <ul>
+          <li><a href="#">NGO Portal</a></li>
+          <li><a href="#">Shelter Directory</a></li>
+          <li><a href="#">Impact Reports</a></li>
+          <li><a href="#">Partner with Us</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#">About FoodBridge</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms of Service</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 FoodBridge. Made with ❤️ to end food waste in India.</p>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

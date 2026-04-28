@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Volunteer Login — FoodBridge</title>
+
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="volunteer.css">
+
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: var(--bg1);
+      font-family: 'Outfit', sans-serif;
+    }
+
+    .login-card {
+      background: var(--card);
+      padding: 40px;
+      border-radius: 16px;
+      box-shadow: 0 0 30px rgba(0,0,0,0.4);
+      width: 400px;
+      text-align: center;
+    }
+
+    .login-card h1 {
+      margin-bottom: 20px;
+    }
+
+    .login-input {
+      width: 100%;
+      padding: 12px;
+      border-radius: 10px;
+      border: none;
+      margin-bottom: 15px;
+      background: #1e293b;
+      color: white;
+    }
+
+    .login-btn {
+      width: 100%;
+      padding: 12px;
+      border-radius: 25px;
+      border: none;
+      background: linear-gradient(135deg, #f97316, #fb923c);
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .details {
+      margin-top: 20px;
+      text-align: left;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="login-card">
+    <h1>🔐 Volunteer Login</h1>
+
+    <input type="text" id="volunteerId" placeholder="Enter Volunteer ID" class="login-input">
+    <button id="loginBtn" class="login-btn">Login</button>
+
+    <div id="details" class="details">
+      <h3>Your Details</h3>
+      <p><b>ID:</b> <span id="dId"></span></p>
+      <p><b>Name:</b> <span id="dName"></span></p>
+      <p><b>Phone:</b> <span id="dPhone"></span></p>
+      <p><b>Email:</b> <span id="dEmail"></span></p>
+      <p><b>City:</b> <span id="dCity"></span></p>
+      <p><b>Vehicle:</b> <span id="dVehicle"></span></p>
+      <p><b>Availability:</b> <span id="dAvailability"></span></p>
+    </div>
+  </div>
+
+  <script src="volunteer-login.js"></script>
+
+</body>
+</html>
