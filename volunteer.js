@@ -1,5 +1,3 @@
-// volunteer.js — backend connected
-
 const hb = document.getElementById("hamburger");
 const nl = document.getElementById("navLinks");
 
@@ -10,9 +8,7 @@ if (hb && nl) {
 const btn = document.getElementById("volSubmitBtn");
 
 if (btn) {
-  btn.addEventListener("click", async (e) => {
-    e.preventDefault();
-
+  btn.addEventListener("click", async () => {
     const name = document.getElementById("vName")?.value.trim();
     const phone = document.getElementById("vPhone")?.value.trim();
     const email = document.getElementById("vEmail")?.value.trim();
@@ -34,22 +30,20 @@ if (btn) {
       if (document.getElementById("avEve")?.checked) availability.push("Evening");
       if (document.getElementById("avWknd")?.checked) availability.push("Weekends");
 
-      const volunteerData = {
-        name,
-        phone,
-        email,
-        city,
-        vehicle: document.getElementById("vVehicle")?.value || "",
-        availability,
-        motivation: document.getElementById("vMotivation")?.value.trim() || ""
-      };
-
-      const res = await fetch("http://localhost:3000/api/volunteers", {
+      const res = await fetch("/api/volunteers", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
         },
-        body: JSON.stringify(volunteerData)
+        body: JSON.stringify({
+          name,
+          phone,
+          email,
+          city,
+          vehicle: document.getElementById("vVehicle")?.value || "",
+          availability,
+          motivation: document.getElementById("vMotivation")?.value.trim() || ""
+        })
       });
 
       const result = await res.json();
@@ -58,15 +52,16 @@ if (btn) {
         throw new Error(result.message || "Could not register volunteer");
       }
 
-      alert("Volunteer joined successfully!");
+      const volunteerId = result.volunteer?.id || result.id;
 
-      if (document.getElementById("volId")) {
-        document.getElementById("volId").textContent = result.volunteer?.id || result.id;
+alert(`🎉 Volunteer joined successfully!\n\nYour Volunteer ID is: ${volunteerId}`);
 
-      document.getElementById("joinFormCard")?.classList.add("hidden");
-      document.getElementById("volSuccess")?.classList.remove("hidden");
+document.getElementById("volId").textContent = volunteerId;
 
-      document.getElementById("volSuccess")?.scrollIntoView({
+      document.getElementById("joinFormCard").classList.add("hidden");
+      document.getElementById("volSuccess").classList.remove("hidden");
+
+      document.getElementById("volSuccess").scrollIntoView({
         behavior: "smooth",
         block: "center"
       });
@@ -78,26 +73,5 @@ if (btn) {
       btn.disabled = false;
       btn.textContent = "🚀 Join the Network";
     }
-  });
-}
-
-const cards = document.querySelectorAll(".vol-how-card, .perk-card");
-
-if ("IntersectionObserver" in window) {
-  const io = new IntersectionObserver((entries) => {
-    entries.forEach((e) => {
-      if (e.isIntersecting) {
-        e.target.style.opacity = "1";
-        e.target.style.transform = "translateY(0)";
-        io.unobserve(e.target);
-      }
-    });
-  }, { threshold: 0.1 });
-
-  cards.forEach((el) => {
-    el.style.opacity = "0";
-    el.style.transform = "translateY(24px)";
-    el.style.transition = "opacity .5s ease, transform .5s ease";
-    io.observe(el);
   });
 }

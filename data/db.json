@@ -54,12 +54,13 @@
       "city": "Bangalore",
       "area": "Koramangala",
       "mins": 90,
-      "status": "available",
+      "status": "claimed",
       "tags": [
         "Variety",
         "Fresh"
       ],
-      "postedAt": "2026-04-28T14:32:05.213Z"
+      "postedAt": "2026-04-28T14:32:05.213Z",
+      "claimedAt": "2026-04-29T00:26:03.085Z"
     },
     {
       "id": "FB-1003",
@@ -96,7 +97,16 @@
       "postedAt": "2026-04-28T14:32:05.213Z"
     }
   ],
-  "claims": [],
+  "claims": [
+    {
+      "id": "CL-4763-3085",
+      "listingId": "FB-1002",
+      "name": "sajna",
+      "phone": "9591591567",
+      "claimType": "Individual",
+      "createdAt": "2026-04-29T00:26:03.085Z"
+    }
+  ],
   "volunteers": [
     {
       "id": "VOL-4352-0710",
@@ -143,6 +153,148 @@
       ],
       "motivation": "bbb",
       "joinedAt": "2026-04-28T15:29:29.558Z"
+    },
+    {
+      "id": "VOL-8499-3787",
+      "name": "Raksha",
+      "phone": "895555555",
+      "email": "rakshapoojary5129@gmail.com",
+      "city": "mumbai",
+      "vehicle": "Car",
+      "availability": [
+        "Morning",
+        "Afternoon",
+        "Evening",
+        "Weekends"
+      ],
+      "motivation": "gsgs",
+      "joinedAt": "2026-04-28T17:34:53.787Z"
+    },
+    {
+      "id": "VOL-2279-6187",
+      "name": "Raksha",
+      "phone": "895555555",
+      "email": "rakshapoojary5129@gmail.com",
+      "city": "mumbai",
+      "vehicle": "Car",
+      "availability": [
+        "Morning",
+        "Afternoon",
+        "Evening",
+        "Weekends"
+      ],
+      "motivation": "gsgs",
+      "joinedAt": "2026-04-28T17:34:56.187Z"
+    },
+    {
+      "id": "VOL-3850-9905",
+      "name": "Raksha",
+      "phone": "895555555",
+      "email": "rakshapoojary5129@gmail.com",
+      "city": "mumbai",
+      "vehicle": "Car",
+      "availability": [
+        "Morning",
+        "Afternoon",
+        "Evening",
+        "Weekends"
+      ],
+      "motivation": "gsgs",
+      "joinedAt": "2026-04-28T17:34:59.905Z"
+    },
+    {
+      "id": "VOL-1825-3258",
+      "name": "Raksha",
+      "phone": "895555555",
+      "email": "rakshapoojary5129@gmail.com",
+      "city": "mumbai",
+      "vehicle": "Car",
+      "availability": [
+        "Morning",
+        "Afternoon",
+        "Evening",
+        "Weekends"
+      ],
+      "motivation": "gsgs",
+      "joinedAt": "2026-04-28T17:35:13.258Z"
+    },
+    {
+      "id": "VOL-4597-3761",
+      "name": "Raksha",
+      "phone": "895555555",
+      "email": "rakshapoojary5129@gmail.com",
+      "city": "mumbai",
+      "vehicle": "Car",
+      "availability": [
+        "Morning",
+        "Afternoon",
+        "Evening",
+        "Weekends"
+      ],
+      "motivation": "gsgs",
+      "joinedAt": "2026-04-28T17:35:13.761Z"
+    },
+    {
+      "id": "VOL-1449-1753",
+      "name": "Raksha",
+      "phone": "895555555",
+      "email": "rakshapoojary5129@gmail.com",
+      "city": "mumbai",
+      "vehicle": "Car",
+      "availability": [
+        "Morning",
+        "Afternoon",
+        "Evening",
+        "Weekends"
+      ],
+      "motivation": "gsgs",
+      "joinedAt": "2026-04-28T17:35:21.753Z"
+    },
+    {
+      "id": "VOL-5326-4205",
+      "name": "samarth",
+      "phone": "89546256",
+      "email": "sam@gmail.com",
+      "city": "mumbai",
+      "vehicle": "Bicycle",
+      "availability": [
+        "Morning",
+        "Afternoon",
+        "Evening",
+        "Weekends"
+      ],
+      "motivation": "hhhh",
+      "joinedAt": "2026-04-28T17:38:24.205Z"
+    },
+    {
+      "id": "VOL-5989-6610",
+      "name": "Aaadarsh",
+      "phone": "5545555",
+      "email": "xy@gmail.com",
+      "city": "mm",
+      "vehicle": "Motorcycle / Scooter",
+      "availability": [
+        "Afternoon",
+        "Evening",
+        "Weekends"
+      ],
+      "motivation": "nnnyg",
+      "joinedAt": "2026-04-28T18:11:36.610Z"
+    },
+    {
+      "id": "VOL-6328-0891",
+      "name": "Sajna B Bhandary",
+      "phone": "+919591591567",
+      "email": "Abhishekkulal001@gmail.com",
+      "city": "banglore",
+      "vehicle": "Bicycle",
+      "availability": [
+        "Afternoon",
+        "Evening",
+        "Weekends"
+      ],
+      "motivation": "",
+      "joinedAt": "2026-04-29T00:24:10.891Z"
     }
   ],
   "alerts": []

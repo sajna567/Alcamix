@@ -1,10 +1,24 @@
-document.getElementById("loginBtn").addEventListener("click", async () => {
-  const id = document.getElementById("volunteerId").value.trim();
+const loginBtn = document.getElementById("loginBtn");
+const volunteerIdInput = document.getElementById("volunteerId");
+
+loginBtn.addEventListener("click", loginVolunteer);
+
+volunteerIdInput.addEventListener("keypress", function (e) {
+  if (e.key === "Enter") {
+    loginVolunteer();
+  }
+});
+
+async function loginVolunteer() {
+  const id = volunteerIdInput.value.trim();
 
   if (!id) {
-    alert("Please enter Volunteer ID");
+    alert("Please enter your Volunteer ID");
     return;
   }
+
+  loginBtn.disabled = true;
+  loginBtn.textContent = "Checking...";
 
   try {
     const res = await fetch(`/api/volunteers/${id}`);
@@ -15,22 +29,14 @@ document.getElementById("loginBtn").addEventListener("click", async () => {
       return;
     }
 
-    // AFTER fetching volunteer successfully
+    localStorage.setItem("loggedVolunteerId", volunteer.id);
+    window.location.href = "volunteer-dashboard.html";
 
-localStorage.setItem("loggedVolunteerId", volunteer.id);
-window.location.href = "volunteer-dashboard.html";
-
-    document.getElementById("dId").textContent = volunteer.id;
-    document.getElementById("dName").textContent = volunteer.name;
-    document.getElementById("dPhone").textContent = volunteer.phone;
-    document.getElementById("dEmail").textContent = volunteer.email;
-    document.getElementById("dCity").textContent = volunteer.city;
-    document.getElementById("dVehicle").textContent = volunteer.vehicle || "Not provided";
-    document.getElementById("dAvailability").textContent =
-      volunteer.availability?.join(", ") || "Not provided";
-
-  } catch (err) {
-    alert("Something went wrong");
-    console.error(err);
+  } catch (error) {
+    console.error(error);
+    alert("Something went wrong. Make sure server is running.");
+  } finally {
+    loginBtn.disabled = false;
+    loginBtn.textContent = "Login to Dashboard";
   }
-});
+}
