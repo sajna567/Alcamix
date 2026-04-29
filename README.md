@@ -22,53 +22,55 @@ FoodBridge is a full-stack web application that connects **food providers (resta
 ---
 ## 📂 Project Structure
 
+```
 FoodBridge/
-├── public/ # Frontend (static files)
-│ ├── css/
-│ │ ├── styles.css
-│ │ ├── feed.css
-│ │ ├── donate.css
-│ │ └── volunteer.css
-│ │
-│ ├── js/
-│ │ ├── feed.js
-│ │ ├── donate.js
-│ │ ├── find.js
-│ │ ├── volunteer.js
-│ │ ├── volunteer-login.js
-│ │ └── volunteer-dashboard.js
-│ │
-│ ├── images/
-│ │ ├── food_spread.png
-│ │ ├── hero_food.png
-│ │ ├── ngo_shelter.png
-│ │ └── volunteer_network.png
-│ │
-│ ├── pages/
-│ │ ├── index.html
-│ │ ├── feed.html
-│ │ ├── donate.html
-│ │ ├── find.html
-│ │ ├── volunteer.html
-│ │ ├── volunteer-login.html
-│ │ └── volunteer-dashboard.html
+├── public/
+│   ├── css/
+│   │   ├── styles.css
+│   │   ├── feed.css
+│   │   ├── donate.css
+│   │   └── volunteer.css
+│   │
+│   ├── js/
+│   │   ├── feed.js
+│   │   ├── donate.js
+│   │   ├── find.js
+│   │   ├── volunteer.js
+│   │   ├── volunteer-login.js
+│   │   └── volunteer-dashboard.js
+│   │
+│   ├── images/
+│   │   ├── food_spread.png
+│   │   ├── hero_food.png
+│   │   ├── ngo_shelter.png
+│   │   └── volunteer_network.png
+│   │
+│   ├── pages/
+│   │   ├── index.html
+│   │   ├── feed.html
+│   │   ├── donate.html
+│   │   ├── find.html
+│   │   ├── volunteer.html
+│   │   ├── volunteer-login.html
+│   │   └── volunteer-dashboard.html
 │
-├── server/ # Backend (Node + Express)
-│ ├── routes/
-│ │ └── api.js
-│ │
-│ ├── controllers/ # Business logic
-│ │ └── listingsController.js
-│ │
-│ ├── data/
-│ │ └── db.json
-│ │
-│ ├── app.js
-│ └── server.js
+├── server/
+│   ├── routes/
+│   │   └── api.js
+│   │
+│   ├── controllers/
+│   │   └── listingsController.js
+│   │
+│   ├── data/
+│   │   └── db.json
+│   │
+│   ├── app.js
+│   └── server.js
 │
 ├── package.json
 ├── README.md
 └── .gitignore
+```
 ## Run
 ```bash
 npm install
